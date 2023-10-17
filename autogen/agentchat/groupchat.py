@@ -16,6 +16,14 @@ class GroupChat:
     messages: List[Dict]
     max_round: int = 10
     admin_name: str = "Admin"  # the name of the admin agent
+    version: Optional[str] = None  # the version of the group chat
+
+    def __init__(self, agents: List[Agent], messages: List[Dict], max_round: int = 10, admin_name: str = "Admin", version: Optional[str] = None):
+        self.agents = agents
+        self.messages = messages
+        self.max_round = max_round
+        self.admin_name = admin_name
+        self.version = version
 
     @property
     def agent_names(self) -> List[str]:
